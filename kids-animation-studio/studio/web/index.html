@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids Animation Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🎬%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#FFF8EE; --panel:#FFFFFF; --ink:#2B2118; --muted:#7A6A5A; --line:#EEDFCB;
+  --brand:#F28C28; --brand-ink:#FFFFFF; --accent:#3B82F6; --ok:#16A34A; --warn:#D97706; --err:#DC2626;
+  --chip:#FFF1DE; --shadow:0 2px 10px rgba(80,50,20,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1612; --panel:#251E18; --ink:#F6EDE3; --muted:#B9A794; --line:#3A2F25;
+    --brand:#F59E3B; --brand-ink:#1B1612; --accent:#60A5FA; --ok:#4ADE80; --warn:#FBBF24; --err:#F87171;
+    --chip:#33281F; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1612; --panel:#251E18; --ink:#F6EDE3; --muted:#B9A794; --line:#3A2F25;
+  --brand:#F59E3B; --brand-ink:#1B1612; --accent:#60A5FA; --ok:#4ADE80; --warn:#FBBF24; --err:#F87171;
+  --chip:#33281F; --shadow:none;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:2}
+header h1{font-size:20px;margin:0;flex:1}
+header h1 span{color:var(--brand)}
+button,select,input,textarea{font:inherit;color:inherit}
+button{background:var(--brand);color:var(--brand-ink);border:0;border-radius:10px;padding:9px 16px;font-weight:600;cursor:pointer}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button:disabled{opacity:.5;cursor:not-allowed}
+main{display:grid;grid-template-columns:300px 1fr;gap:16px;padding:16px;max-width:1400px;margin:0 auto}
+@media (max-width:860px){main{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);margin-bottom:16px}
+.card h2{margin:0 0 10px;font-size:17px}
+label{display:block;font-size:14px;color:var(--muted);margin:10px 0 4px}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+textarea{min-height:70px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{padding:10px;border-radius:10px;cursor:pointer;border:1px solid transparent}
+.plist li:hover{background:var(--chip)}
+.plist li.sel{border-color:var(--brand);background:var(--chip)}
+.plist small{color:var(--muted);display:block}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px;padding:0;list-style:none}
+.steps li{font-size:13px;padding:5px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line)}
+.steps li.concluida{border-color:var(--ok);color:var(--ok)}
+.steps li.executando{border-color:var(--accent);color:var(--accent);font-weight:600}
+.steps li.aguardando_aprovacao{border-color:var(--warn);color:var(--warn);font-weight:600}
+.steps li.erro{border-color:var(--err);color:var(--err);font-weight:600}
+.bar{height:10px;background:var(--chip);border-radius:999px;overflow:hidden}
+.bar div{height:100%;background:var(--brand);width:0;transition:width .4s}
+.msg{color:var(--muted);font-size:14px;margin-top:6px}
+.chars{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.chars figure{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px}
+.chars img{width:100%;border-radius:8px;display:block;aspect-ratio:1;object-fit:cover;background:var(--chip)}
+.chars figcaption{font-size:13px;margin-top:6px}
+.swatches{display:flex;gap:4px;margin-top:4px}
+.swatches i{width:16px;height:16px;border-radius:4px;border:1px solid var(--line)}
+video{width:100%;border-radius:12px;background:#000}
+.files a{display:inline-block;margin:4px 6px 4px 0;padding:6px 10px;border-radius:8px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:14px;border:1px solid var(--line)}
+.scene{border-left:4px solid var(--brand);padding:6px 10px;margin:10px 0;background:var(--bg);border-radius:6px}
+.scene .meta{font-size:12px;color:var(--muted)}
+.teach{background:var(--chip);border-radius:12px;padding:12px 14px;font-size:15px}
+.teach b{color:var(--brand)}
+pre.log{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:12px;max-height:220px;overflow:auto;white-space:pre-wrap}
+.diag{font-size:13px}
+.diag div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:3px 0}
+.diag .no{color:var(--err)}
+.banner{border:1px solid var(--warn);color:var(--warn);border-radius:10px;padding:10px;margin:10px 0;font-size:14px}
+.hidden{display:none}
+.toggle{display:flex;align-items:center;gap:8px;margin-top:10px}
+.toggle input{width:auto}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎬 Kids Animation Studio <span>AI</span></h1>
+  <button class="ghost" id="themeBtn" title="Alternar tema">🌓</button>
+</header>
+<main>
+  <aside>
+    <div class="card">
+      <h2>Novo vídeo</h2>
+      <label for="tema">Sobre o que é a história?</label>
+      <textarea id="tema" placeholder="Ex.: Um leãozinho que aprende a compartilhar">Um leãozinho que aprende a compartilhar</textarea>
+      <div class="row">
+        <div><label for="duracao">Duração (s)</label><input id="duracao" type="number" min="15" max="90" value="25"></div>
+        <div><label for="proporcao">Formato</label><select id="proporcao"><option value="16:9">16:9 (YouTube)</option><option value="9:16">9:16 (Reels/TikTok)</option></select></div>
+      </div>
+      <div class="row">
+        <div><label for="faixa">Idade</label><select id="faixa"><option value="2-4">2 a 4 anos</option><option value="4-6" selected>4 a 6 anos</option><option value="6-8">6 a 8 anos</option></select></div>
+        <div><label for="categoria">Categoria</label><select id="categoria"><option value="">Automática</option><option value="valores">Valores familiares</option><option value="animais">Animais</option><option value="aventura">Aventura</option><option value="educacao">Educação</option><option value="biblica">Bíblica</option></select></div>
+      </div>
+      <div class="row">
+        <div><label for="cenario">Cenário</label><select id="cenario"><option value="">Do roteiro</option></select></div>
+        <div><label for="qualidade">Qualidade</label><select id="qualidade"><option value="rascunho">Rascunho (rápido)</option><option value="padrao">Padrão 720p</option><option value="alta">Alta 1080p</option></select></div>
+      </div>
+      <label for="voz">Voz</label>
+      <select id="voz"><option value="piper">Piper local (grátis)</option><option value="elevenlabs">ElevenLabs – Bianca (usa créditos)</option></select>
+      <div class="toggle"><input type="checkbox" id="ensino" checked><label for="ensino" style="margin:0">Modo Ensino (explica cada etapa)</label></div>
+      <p id="formErr" class="msg" style="color:var(--err)"></p>
+      <button id="criar" style="width:100%;margin-top:6px">Criar roteiro</button>
+    </div>
+    <div class="card">
+      <h2>Projetos</h2>
+      <ul class="plist" id="plist"><li><small>Nenhum projeto ainda.</small></li></ul>
+    </div>
+    <div class="card">
+      <h2>Configurações</h2>
+      <div class="toggle"><input type="checkbox" id="pagos"><label for="pagos" style="margin:0">Permitir serviços pagos (ElevenLabs/Claude)</label></div>
+      <p class="msg">Desligado = nenhum crédito é consumido. As chaves de API ficam em variáveis de ambiente, nunca neste painel.</p>
+      <div class="toggle"><input type="checkbox" id="aprov"><label for="aprov" style="margin:0">Exigir aprovação de roteiro e personagens</label></div>
+    </div>
+    <div class="card">
+      <h2>Diagnóstico</h2>
+      <div class="diag" id="diag">Verificando…</div>
+    </div>
+  </aside>
+
+  <section id="detail">
+    <div class="card" id="welcome">
+      <h2>Bem-vindo(a)! 👋</h2>
+      <p>Escreva um tema à esquerda e clique em <b>Criar roteiro</b>. O estúdio escreve a história, cria os personagens em 3D, gera as vozes, compõe a música, anima, edita e prepara a publicação.</p>
+      <p>Você aprova o <b>roteiro</b> e os <b>personagens</b> antes de começar o render. Nada é publicado automaticamente.</p>
+    </div>
+    <div id="proj" class="hidden">
+      <div class="card">
+        <h2 id="ptitle">Projeto</h2>
+        <ul class="steps" id="steps"></ul>
+        <div class="bar"><div id="pbar"></div></div>
+        <div class="msg" id="pmsg"></div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="ghost" id="btnCont">Continuar / retomar</button>
+          <select id="redoSel" style="width:auto"></select>
+          <button class="ghost" id="btnRedo">Refazer a partir desta etapa</button>
+        </div>
+      </div>
+      <div class="card hidden" id="teachCard"><h2>📚 Modo Ensino</h2><div class="teach" id="teach"></div></div>
+      <div class="card hidden" id="approveScript">
+        <h2>Revise o roteiro</h2>
+        <p class="msg">Você pode editar os textos antes de aprovar. As vozes serão geradas a partir daqui.</p>
+        <label for="editTitle">Título</label><input id="editTitle">
+        <div id="editScenes"></div>
+        <div style="display:flex;gap:8px;margin-top:10px"><button class="ghost" id="saveScript">Salvar edições</button><button id="okScript">Aprovar roteiro</button></div>
+      </div>
+      <div class="card hidden" id="approveChars">
+        <h2>Revise os personagens</h2>
+        <div class="chars" id="charGrid"></div>
+        <div style="margin-top:10px"><button id="okChars">Aprovar personagens e produzir</button></div>
+      </div>
+      <div class="card hidden" id="videoCard">
+        <h2>🎉 Vídeo pronto para revisão</h2>
+        <video id="player" controls playsinline></video>
+        <div class="files" id="files" style="margin-top:10px"></div>
+        <div class="banner">Assista ao vídeo inteiro e leia o checklist em PUBLICACAO.md antes de publicar. O estúdio não publica nada sozinho.</div>
+      </div>
+      <div class="card hidden" id="scriptCard"><h2>Roteiro</h2><div id="scriptView"></div></div>
+      <div class="card"><h2>Registro</h2><pre class="log" id="log"></pre></div>
+    </div>
+  </section>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const STEP_NAMES={roteiro:"Roteiro",personagens:"Personagens",voz:"Vozes",musica:"Música",animacao:"Animação 3D",edicao:"Edição",publicacao:"Publicação",relatorio:"Relatório"};
+const STATUS_TXT={pendente:"",executando:"⏳",concluida:"✔",aguardando_aprovacao:"✋",erro:"✖"};
+let current=null, ensino={}, lastStatusKey="";
+try{const t=localStorage.getItem("kas-theme"); if(t) document.documentElement.dataset.theme=t;}catch(e){}
+$("#themeBtn").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme==="dark"||(!r.dataset.theme&&matchMedia("(prefers-color-scheme: dark)").matches);r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("kas-theme",r.dataset.theme)}catch(e){}};
+async function api(path,opts){const r=await fetch(path,opts);const j=await r.json().catch(()=>({}));if(!r.ok) throw new Error(j.erro||r.statusText);return j;}
+const post=(p,b)=>api(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b||{})});
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+async function loadSide(){
+  const [projs,cfg,sets]=await Promise.all([api("/api/projetos"),api("/api/config"),api("/api/cenarios")]);
+  const ul=$("#plist");
+  ul.innerHTML=projs.length?projs.map(p=>`<li data-id="${esc(p.id)}" class="${p.id===current?'sel':''}"><b>${esc(p.titulo||p.tema)}</b><small>${esc(p.progresso.mensagem||"")}</small></li>`).join(""):"<li><small>Nenhum projeto ainda.</small></li>";
+  ul.querySelectorAll("li[data-id]").forEach(li=>li.onclick=()=>select(li.dataset.id));
+  $("#pagos").checked=!!cfg.permitir_servicos_pagos; $("#aprov").checked=!!cfg.exigir_aprovacao;
+  $("#qualidade").value=cfg.qualidade||"rascunho";
+  const cs=$("#cenario"); if(cs.options.length<2) sets.filter(s=>s.id!=="entardecer").forEach(s=>cs.add(new Option(s.nome,s.id)));
+}
+async function loadDiag(){
+  const d=await api("/api/diagnostico");
+  $("#diag").innerHTML=d.itens.map(i=>`<div><span>${esc(i.item)}</span><span class="${i.ok?'':'no'}">${esc(i.valor)}</span></div>`).join("");
+}
+$("#pagos").onchange=async e=>{ if(e.target.checked && !confirm("Serviços pagos consomem créditos das suas contas (ElevenLabs/Claude). Autorizar?")){e.target.checked=false;return;} await post("/api/config",{permitir_servicos_pagos:e.target.checked}); loadDiag(); };
+$("#aprov").onchange=e=>post("/api/config",{exigir_aprovacao:e.target.checked});
+$("#criar").onclick=async()=>{
+  $("#formErr").textContent=""; $("#criar").disabled=true;
+  try{
+    const r=await post("/api/projetos",{tema:$("#tema").value,duracao:+$("#duracao").value,proporcao:$("#proporcao").value,faixa:$("#faixa").value,categoria:$("#categoria").value,cenario:$("#cenario").value,qualidade:$("#qualidade").value,voz:$("#voz").value,modo_ensino:$("#ensino").checked});
+    current=r.id; lastStatusKey=""; await loadSide(); refresh();
+  }catch(e){$("#formErr").textContent=e.message}
+  $("#criar").disabled=false;
+};
+function select(id){current=id;lastStatusKey="";loadSide();refresh();}
+
+function renderScript(h,chars){
+  const names=Object.fromEntries(chars.map(c=>[c.id,c.nome]));
+  return `<p><b>Moral:</b> ${esc(h.moral)}</p>`+h.cenas.map(s=>`<div class="scene"><div class="meta">Cena ${s.numero} · ${esc(s.cenario)} · câmera ${esc(s.plano)}/${esc(s.movimento)} · música ${esc(s.emocao_musical)}</div><div><b>Narrador:</b> ${esc(s.narracao)}</div>${s.falas.map(f=>`<div><b>${esc(names[f.personagem])}</b> <i>(${esc(f.emocao)})</i>: ${esc(f.texto)}</div>`).join("")}</div>`).join("");
+}
+function renderEditor(h){
+  $("#editTitle").value=h.titulo;
+  $("#editScenes").innerHTML=h.cenas.map((s,i)=>`<div class="scene"><div class="meta">Cena ${s.numero}</div><label>Narração</label><textarea data-s="${i}" data-k="n">${esc(s.narracao)}</textarea>${s.falas.map((f,j)=>`<label>Fala ${j+1}</label><input data-s="${i}" data-f="${j}" value="${esc(f.texto)}">`).join("")}</div>`).join("");
+}
+$("#saveScript").onclick=async()=>{
+  const p=await api("/api/projetos/"+current); const cenas=p.historia.cenas.map(()=>({falas:[]}));
+  document.querySelectorAll("#editScenes [data-s]").forEach(el=>{const i=+el.dataset.s; if(el.dataset.k==="n") cenas[i].narracao=el.value; else cenas[i].falas[+el.dataset.f]=el.value;});
+  try{await post(`/api/projetos/${current}/roteiro`,{titulo:$("#editTitle").value,cenas}); lastStatusKey=""; refresh(); alert("Roteiro salvo.");}catch(e){alert(e.message)}
+};
+$("#okScript").onclick=async()=>{await post(`/api/projetos/${current}/aprovar`,{etapa:"roteiro"}); lastStatusKey=""; refresh();};
+$("#okChars").onclick=async()=>{await post(`/api/projetos/${current}/aprovar`,{etapa:"personagens"}); lastStatusKey=""; refresh();};
+$("#btnCont").onclick=async()=>{await post(`/api/projetos/${current}/continuar`); refresh();};
+$("#btnRedo").onclick=async()=>{ if(!confirm("Refazer a partir de '"+STEP_NAMES[$("#redoSel").value]+"'? As etapas seguintes serão refeitas.")) return; try{await post(`/api/projetos/${current}/refazer`,{etapa:$("#redoSel").value}); lastStatusKey=""; refresh();}catch(e){alert(e.message)} };
+
+async function refresh(){
+  if(!current) return;
+  let p; try{p=await api("/api/projetos/"+current);}catch(e){return;}
+  $("#welcome").classList.add("hidden"); $("#proj").classList.remove("hidden");
+  $("#ptitle").textContent=p.titulo||p.tema;
+  const etapas=Object.keys(STEP_NAMES);
+  $("#steps").innerHTML=etapas.map(e=>`<li class="${p.etapas[e].status}">${STATUS_TXT[p.etapas[e].status]} ${STEP_NAMES[e]}</li>`).join("");
+  if(!$("#redoSel").options.length) etapas.forEach(e=>$("#redoSel").add(new Option(STEP_NAMES[e],e)));
+  $("#pbar").style.width=(p.progresso.pct||0)+"%";
+  const errStep=etapas.find(e=>p.etapas[e].status==="erro");
+  $("#pmsg").textContent=(p.rodando?"⏳ ":"")+(p.progresso.mensagem||"")+(errStep?` — erro em ${STEP_NAMES[errStep]}: corrija e clique em Continuar.`:"");
+  $("#log").textContent=(p.log||[]).join("\n"); $("#log").scrollTop=1e9;
+  const et=p.progresso.etapa; const t=ensino[et];
+  $("#teachCard").classList.toggle("hidden",!(p.parametros.modo_ensino&&t));
+  if(t) $("#teach").innerHTML=`<b>${esc(t.titulo)}</b><p>${esc(t.o_que)}</p><p><b>Ferramenta:</b> ${esc(t.ferramenta)}<br><b>Por quê:</b> ${esc(t.por_que)}<br><b>Custo:</b> ${esc(t.custo)}<br><b>Arquivos:</b> ${esc(t.arquivos.join(", "))}<br><b>Para reproduzir:</b> ${esc(t.reproduzir)}</p>`;
+  const key=JSON.stringify([p.id,etapas.map(e=>p.etapas[e].status)]);
+  if(key!==lastStatusKey){
+    lastStatusKey=key;
+    const waitScript=p.etapas.roteiro.status==="aguardando_aprovacao", waitChars=p.etapas.personagens.status==="aguardando_aprovacao";
+    $("#approveScript").classList.toggle("hidden",!waitScript);
+    $("#approveChars").classList.toggle("hidden",!waitChars);
+    if(waitScript&&p.historia) renderEditor(p.historia);
+    if(p.personagens) $("#charGrid").innerHTML=p.personagens.map(c=>`<figure><img alt="Folha de modelo de ${esc(c.nome)}" src="/arquivos/${p.id}/personagens/${c.id}.png?${Date.now()}" onerror="this.style.visibility='hidden'"><figcaption><b>${esc(c.nome)}</b> — ${esc(c.especie_nome)}<br>${esc(c.personalidade)}<div class="swatches">${Object.values(c.cores).map(v=>`<i style="background:${esc(v)}"></i>`).join("")}</div></figcaption></figure>`).join("");
+    $("#scriptCard").classList.toggle("hidden",!p.historia||waitScript);
+    if(p.historia) $("#scriptView").innerHTML=renderScript(p.historia,p.personagens||[]);
+    const f=p.arquivos||{}; const native=p.parametros.proporcao==="9:16"?"final/video_9x16.mp4":"final/video_16x9.mp4";
+    $("#videoCard").classList.toggle("hidden",!f[native]);
+    if(f[native]){ $("#player").src=`/arquivos/${p.id}/${native}?${Date.now()}`;
+      const labels={"final/video_16x9.mp4":"MP4 16:9","final/video_9x16.mp4":"MP4 9:16","final/capa.jpg":"Capa","final/capa_vertical.jpg":"Capa vertical","final/legendas.srt":"Legendas .srt","final/PUBLICACAO.md":"Pacote de publicação","final/metadados.json":"Metadados","RELATORIO.md":"Relatório (ferramentas, custos, licenças)","AULA.md":"Aula passo a passo","roteiro/roteiro.md":"Roteiro","final/folha_de_contato.jpg":"Folha de contato"};
+      $("#files").innerHTML=Object.entries(labels).filter(([k])=>f[k]).map(([k,v])=>`<a href="/arquivos/${p.id}/${k}" target="_blank" download>${v}</a>`).join("");
+    }
+    loadSide();
+  }
+}
+(async()=>{ensino=await api("/api/ensino"); await loadSide(); loadDiag(); const ps=await api("/api/projetos"); if(ps.length) select(ps[0].id);})();
+setInterval(refresh,2500);
+</script>
+</body>
+</html>

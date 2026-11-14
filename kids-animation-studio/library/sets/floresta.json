@@ -1,0 +1,49 @@
+{
+  "id": "floresta",
+  "nome": "Floresta Encantada",
+  "descricao": "Floresta verde com árvores redondas, pinheiros, cogumelos e flores.",
+  "chao": [
+    "#4E9A3A",
+    "#6DBE45"
+  ],
+  "colinas": "#3F8A3A",
+  "ceu_topo": "#2F86DD",
+  "ceu_horizonte": "#B5E0FF",
+  "luz_ceu": 1.1,
+  "sol_cor": "#FFF4DD",
+  "sol_forca": 3.2,
+  "sol_elevacao": 55,
+  "sol_azimute": -30,
+  "nuvens": 5,
+  "elementos": [
+    {
+      "tipo": "arvore",
+      "quantidade": 10,
+      "espalhar": 20,
+      "raio_livre": 5
+    },
+    {
+      "tipo": "pinheiro",
+      "quantidade": 8,
+      "espalhar": 24,
+      "raio_livre": 6
+    },
+    {
+      "tipo": "cogumelo",
+      "quantidade": 10,
+      "espalhar": 8,
+      "raio_livre": 3
+    },
+    {
+      "tipo": "flor",
+      "quantidade": 30,
+      "espalhar": 10,
+      "raio_livre": 3
+    },
+    {
+      "tipo": "arbusto",
+      "quantidade": 6,
+      "espalhar": 14
+    }
+  ]
+}

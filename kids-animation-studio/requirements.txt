@@ -1,0 +1,11 @@
+# Essenciais (todas gratuitas e com licenca compativel com uso comercial do resultado)
+numpy>=1.26          # BSD - musica, mixagem
+pillow>=10.0         # HPND - capas
+piper-tts>=1.5       # GPL-3.0 - sintese de voz local (o audio gerado nao herda a licenca)
+
+# Blender: instale o PROGRAMA Blender 4.2+ (recomendado no Windows) OU o modulo abaixo.
+# O modulo bpy exige exatamente a versao de Python que o Blender usa (bpy 5.3 -> Python 3.13).
+# bpy==5.3.0
+
+# Opcional (PAGO por uso, desligado por padrao): roteirista com Claude
+# anthropic>=1.0

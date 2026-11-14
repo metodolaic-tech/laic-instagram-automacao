@@ -1,0 +1,49 @@
+{
+  "id": "bento_urso",
+  "nome": "Bento",
+  "especie": "urso",
+  "especie_nome": "ursinho",
+  "genero": "m",
+  "papel": "amigo",
+  "personalidade": "alegre, falante e muito amigo",
+  "cores": {
+    "pelo": "#8B5A2B",
+    "barriga": "#D9B38C",
+    "juba": "#5E3B1A",
+    "nariz": "#3A2A25",
+    "bochecha": "#FF9AA2",
+    "olhos": "#1E4E8C",
+    "roupa": "#10B981"
+  },
+  "proporcoes": {
+    "altura": 1.08,
+    "cabeca": 1.06,
+    "olhos": 1.02
+  },
+  "orelhas": "redondas",
+  "cauda": "curta",
+  "extras": [],
+  "acessorio": "lenco",
+  "caracteristicas_permanentes": [
+    "ursinho de pelagem #8B5A2B e barriga #D9B38C",
+    "olhos grandes cor #1E4E8C com pontos de brilho",
+    "usa sempre lenço no pescoço na cor #10B981",
+    "cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas"
+  ],
+  "expressoes": [
+    "neutro",
+    "feliz",
+    "triste",
+    "surpreso",
+    "pensativo",
+    "bravo"
+  ],
+  "voz": {
+    "provedor": "piper",
+    "modelo": "pt_BR-jeff-medium",
+    "tom": 1.22,
+    "velocidade": 1.0
+  },
+  "origem": "personagem original gerado pelo Kids Animation Studio AI",
+  "prompt_visual": "Bento, ursinho original, animacao infantil 3D estilizada e original, personagens com cabeca grande e olhos expressivos com brilho, formas arredondadas, cores vibrantes, iluminacao suave de fim de manha, sombras macias, profundidade de campo cinematografica, cenario detalhado; pelagem #8B5A2B, barriga #D9B38C, olhos #1E4E8C grandes e brilhantes, ursinho de pelagem #8B5A2B e barriga #D9B38C; olhos grandes cor #1E4E8C com pontos de brilho; usa sempre lenço no pescoço na cor #10B981; cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas; personalidade: alegre, falante e muito amigo. Nao copiar personagens existentes."
+}

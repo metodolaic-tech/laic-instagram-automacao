@@ -1,0 +1,15 @@
+{
+  "_instrucoes": "Coloque aqui faixas baixadas de fontes com licenca verificavel. Preencha TODOS os campos. Sem permite_comercial=true a faixa nunca e usada. Emocoes validas: aventura, alegria, ternura, suspense, celebracao.",
+  "_exemplo": {
+    "arquivo": "minha_faixa.mp3",
+    "titulo": "Nome da musica",
+    "autor": "Nome do autor",
+    "fonte_url": "https://link-da-pagina-de-download",
+    "licenca": "CC BY 4.0 (ou CC0, ou Licenca da YouTube Audio Library, etc.)",
+    "atribuicao": "Texto de credito exigido pela licenca, se houver",
+    "permite_comercial": true,
+    "emocao": "alegria",
+    "data_download": "2026-11-14"
+  },
+  "faixas": []
+}

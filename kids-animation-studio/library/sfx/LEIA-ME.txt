@@ -1,0 +1,2 @@
+Os efeitos sonoros padrao sao sintetizados pelo proprio estudio (studio/music.py), sem direitos de terceiros.
+Se quiser usar efeitos baixados (Freesound CC0, Pixabay), guarde-os aqui e registre a licenca de cada um.

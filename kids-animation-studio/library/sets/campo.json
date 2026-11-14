@@ -1,0 +1,48 @@
+{
+  "id": "campo",
+  "nome": "Campo Florido",
+  "descricao": "Prado colorido com flores, uma casinha ao longe e árvores.",
+  "chao": [
+    "#7CC85A",
+    "#9ED36A"
+  ],
+  "colinas": "#6DB352",
+  "ceu_topo": "#2B7FE0",
+  "ceu_horizonte": "#B8DEFF",
+  "luz_ceu": 1.1,
+  "sol_cor": "#FFF1D6",
+  "sol_forca": 3.5,
+  "sol_elevacao": 45,
+  "sol_azimute": -35,
+  "nuvens": 8,
+  "elementos": [
+    {
+      "tipo": "flor",
+      "quantidade": 60,
+      "espalhar": 12,
+      "raio_livre": 2.5
+    },
+    {
+      "tipo": "arvore",
+      "quantidade": 6,
+      "espalhar": 22,
+      "raio_livre": 6
+    },
+    {
+      "tipo": "casinha",
+      "quantidade": 1,
+      "espalhar": 16,
+      "raio_livre": 9
+    },
+    {
+      "tipo": "arbusto",
+      "quantidade": 6,
+      "espalhar": 16
+    },
+    {
+      "tipo": "pedra",
+      "quantidade": 4,
+      "espalhar": 12
+    }
+  ]
+}

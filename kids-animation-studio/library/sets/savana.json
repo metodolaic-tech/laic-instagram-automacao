@@ -1,0 +1,45 @@
+{
+  "id": "savana",
+  "nome": "Savana Dourada",
+  "descricao": "Campo aberto de capim dourado com acácias, pedras e colinas suaves.",
+  "chao": [
+    "#C9A54A",
+    "#A8B44A"
+  ],
+  "colinas": "#B9A35A",
+  "ceu_topo": "#2F80D8",
+  "ceu_horizonte": "#A9D6FF",
+  "luz_ceu": 1.0,
+  "sol_cor": "#FFE7C2",
+  "sol_forca": 3.8,
+  "sol_elevacao": 40,
+  "sol_azimute": -40,
+  "nuvens": 6,
+  "elementos": [
+    {
+      "tipo": "acacia",
+      "quantidade": 7,
+      "espalhar": 24,
+      "raio_livre": 5
+    },
+    {
+      "tipo": "pedra",
+      "quantidade": 8,
+      "espalhar": 14
+    },
+    {
+      "tipo": "capim",
+      "quantidade": 30,
+      "espalhar": 14,
+      "raio_livre": 3.5,
+      "cores": {
+        "cor": "#D4AF37"
+      }
+    },
+    {
+      "tipo": "arbusto",
+      "quantidade": 5,
+      "espalhar": 18
+    }
+  ]
+}
