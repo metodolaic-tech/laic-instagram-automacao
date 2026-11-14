@@ -1,0 +1,51 @@
+{
+  "id": "tito_leao",
+  "nome": "Tito",
+  "especie": "leao",
+  "especie_nome": "leãozinho",
+  "genero": "m",
+  "papel": "protagonista",
+  "personalidade": "curioso, brincalhão e cheio de energia",
+  "cores": {
+    "pelo": "#E8A33C",
+    "barriga": "#F7D9A0",
+    "juba": "#B5541C",
+    "nariz": "#3A2A25",
+    "bochecha": "#FF9AA2",
+    "olhos": "#2F6B3A",
+    "roupa": "#EC4899"
+  },
+  "proporcoes": {
+    "altura": 0.96,
+    "cabeca": 1.08,
+    "olhos": 1.11
+  },
+  "orelhas": "redondas",
+  "cauda": "tufo",
+  "extras": [
+    "juba"
+  ],
+  "acessorio": "lenco",
+  "caracteristicas_permanentes": [
+    "leãozinho de pelagem #E8A33C e barriga #F7D9A0",
+    "olhos grandes cor #2F6B3A com pontos de brilho",
+    "usa sempre lenço no pescoço na cor #EC4899",
+    "cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas"
+  ],
+  "expressoes": [
+    "neutro",
+    "feliz",
+    "triste",
+    "surpreso",
+    "pensativo",
+    "bravo"
+  ],
+  "voz": {
+    "provedor": "piper",
+    "modelo": "pt_BR-jeff-medium",
+    "tom": 1.22,
+    "velocidade": 1.0
+  },
+  "origem": "personagem original gerado pelo Kids Animation Studio AI",
+  "prompt_visual": "Tito, leãozinho original, animacao infantil 3D estilizada e original, personagens com cabeca grande e olhos expressivos com brilho, formas arredondadas, cores vibrantes, iluminacao suave de fim de manha, sombras macias, profundidade de campo cinematografica, cenario detalhado; pelagem #E8A33C, barriga #F7D9A0, olhos #2F6B3A grandes e brilhantes, leãozinho de pelagem #E8A33C e barriga #F7D9A0; olhos grandes cor #2F6B3A com pontos de brilho; usa sempre lenço no pescoço na cor #EC4899; cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas; personalidade: curioso, brincalhão e cheio de energia. Nao copiar personagens existentes."
+}

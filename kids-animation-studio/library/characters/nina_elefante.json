@@ -1,0 +1,51 @@
+{
+  "id": "nina_elefante",
+  "nome": "Nina",
+  "especie": "elefante",
+  "especie_nome": "elefantinha",
+  "genero": "f",
+  "papel": "amiga",
+  "personalidade": "corajosa, um pouco teimosa, mas de bom coração",
+  "cores": {
+    "pelo": "#9FB3C8",
+    "barriga": "#C9D6E3",
+    "juba": "#7F93A8",
+    "bochecha": "#F7A8B8",
+    "nariz": "#3A2A25",
+    "olhos": "#2F6B3A",
+    "roupa": "#EF4444"
+  },
+  "proporcoes": {
+    "altura": 1.06,
+    "cabeca": 1.05,
+    "olhos": 1.14
+  },
+  "orelhas": "grandes",
+  "cauda": "fina",
+  "extras": [
+    "tromba"
+  ],
+  "acessorio": "chapeu",
+  "caracteristicas_permanentes": [
+    "elefantinha de pelagem #9FB3C8 e barriga #C9D6E3",
+    "olhos grandes cor #2F6B3A com pontos de brilho",
+    "usa sempre chapeuzinho na cor #EF4444",
+    "cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas"
+  ],
+  "expressoes": [
+    "neutro",
+    "feliz",
+    "triste",
+    "surpreso",
+    "pensativo",
+    "bravo"
+  ],
+  "voz": {
+    "provedor": "piper",
+    "modelo": "pt_BR-faber-medium",
+    "tom": 1.18,
+    "velocidade": 1.0
+  },
+  "origem": "personagem original gerado pelo Kids Animation Studio AI",
+  "prompt_visual": "Nina, elefantinha original, animacao infantil 3D estilizada e original, personagens com cabeca grande e olhos expressivos com brilho, formas arredondadas, cores vibrantes, iluminacao suave de fim de manha, sombras macias, profundidade de campo cinematografica, cenario detalhado; pelagem #9FB3C8, barriga #C9D6E3, olhos #2F6B3A grandes e brilhantes, elefantinha de pelagem #9FB3C8 e barriga #C9D6E3; olhos grandes cor #2F6B3A com pontos de brilho; usa sempre chapeuzinho na cor #EF4444; cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas; personalidade: corajosa, um pouco teimosa, mas de bom coração. Nao copiar personagens existentes."
+}

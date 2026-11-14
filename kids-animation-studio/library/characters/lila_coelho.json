@@ -1,0 +1,49 @@
+{
+  "id": "lila_coelho",
+  "nome": "Lila",
+  "especie": "coelho",
+  "especie_nome": "coelhinha",
+  "genero": "f",
+  "papel": "amiga",
+  "personalidade": "gentil, calma e observadoraa",
+  "cores": {
+    "pelo": "#C8A27A",
+    "barriga": "#F3E3CC",
+    "juba": "#A47D58",
+    "nariz": "#3A2A25",
+    "bochecha": "#FF9AA2",
+    "olhos": "#5B3A1A",
+    "roupa": "#F59E0B"
+  },
+  "proporcoes": {
+    "altura": 1.0,
+    "cabeca": 1.04,
+    "olhos": 1.03
+  },
+  "orelhas": "longas",
+  "cauda": "fofa",
+  "extras": [],
+  "acessorio": "lenco",
+  "caracteristicas_permanentes": [
+    "coelhinha de pelagem #C8A27A e barriga #F3E3CC",
+    "olhos grandes cor #5B3A1A com pontos de brilho",
+    "usa sempre lenço no pescoço na cor #F59E0B",
+    "cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas"
+  ],
+  "expressoes": [
+    "neutro",
+    "feliz",
+    "triste",
+    "surpreso",
+    "pensativo",
+    "bravo"
+  ],
+  "voz": {
+    "provedor": "piper",
+    "modelo": "pt_BR-faber-medium",
+    "tom": 1.18,
+    "velocidade": 1.0
+  },
+  "origem": "personagem original gerado pelo Kids Animation Studio AI",
+  "prompt_visual": "Lila, coelhinha original, animacao infantil 3D estilizada e original, personagens com cabeca grande e olhos expressivos com brilho, formas arredondadas, cores vibrantes, iluminacao suave de fim de manha, sombras macias, profundidade de campo cinematografica, cenario detalhado; pelagem #C8A27A, barriga #F3E3CC, olhos #5B3A1A grandes e brilhantes, coelhinha de pelagem #C8A27A e barriga #F3E3CC; olhos grandes cor #5B3A1A com pontos de brilho; usa sempre lenço no pescoço na cor #F59E0B; cabeça grande (proporção infantil), corpo arredondado, bochechas rosadas; personalidade: gentil, calma e observadoraa. Nao copiar personagens existentes."
+}

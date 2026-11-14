@@ -1,0 +1,11 @@
+projetos/*
+!projetos/.gitkeep
+modelos/vozes/*
+!modelos/vozes/.gitkeep
+config.json
+__pycache__/
+*.pyc
+.venv/
+library/music/*.mp3
+library/music/*.wav
+library/sfx/*.wav

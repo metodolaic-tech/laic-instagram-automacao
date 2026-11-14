@@ -1,0 +1,37 @@
+{
+  "id": "entardecer",
+  "nome": "Colina ao Entardecer",
+  "descricao": "Colina com luz alaranjada de fim de tarde, ideal para finais e lições.",
+  "chao": [
+    "#8DB255",
+    "#B0A050"
+  ],
+  "colinas": "#7A8F4A",
+  "ceu_topo": "#5B6FD6",
+  "ceu_horizonte": "#FFB37A",
+  "luz_ceu": 0.9,
+  "sol_cor": "#FFB570",
+  "sol_forca": 3.0,
+  "sol_elevacao": 18,
+  "sol_azimute": -60,
+  "nuvens": 7,
+  "elementos": [
+    {
+      "tipo": "arvore",
+      "quantidade": 5,
+      "espalhar": 22,
+      "raio_livre": 6
+    },
+    {
+      "tipo": "flor",
+      "quantidade": 25,
+      "espalhar": 10,
+      "raio_livre": 3
+    },
+    {
+      "tipo": "pedra",
+      "quantidade": 4,
+      "espalhar": 12
+    }
+  ]
+}
